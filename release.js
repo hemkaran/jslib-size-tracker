@@ -14,6 +14,13 @@ function getFilesizeInKB(filename) {
     return (fileSizeInBytes / 1024).toFixed(2);
 }
 
+function getFilesizeinBytes(filename){
+    filename = path.join(JSLIB_REPO_PATH, filename + '.gz');
+    var stats = fs.statSync(filename);
+    var fileSizeInBytes = stats['size'];
+    return (fileSizeInBytes)
+}
+
 var fileList = [
     'va.js',
     'vanj.js',
